@@ -1,0 +1,47 @@
+<title><%- title %></title>
+<link rel="stylesheet" href="/css/raffleCards.css">
+<link rel="icon" href="/logos/logo.svg">
+
+<div class="card-deck raffleCardBody">
+    <% result.map(raffleInfo => { %>
+
+        <div class="card my-2 mx-3 cardBody">
+            <img class="card-img-top raffleCardImg" src="<%- raffleInfo.raffleImg.slice(6) %>" alt="Card image cap">
+            <div class="header">
+                <div class="card-body">
+                    <h5 class="card-title"><%- raffleInfo.title %></h5>
+                    <p class="card-text"><%- raffleInfo.raffleDesc %></p>
+                </div>
+                <div class="editButton">
+                    <form action="/edit_raffle" method="post">
+                        <input type="hidden" name="id" id="id" value="<%- raffleInfo.id %>">
+                        <a href="#" onclick="this.parentNode.submit()"><img src="/icons/edit.png" width="13px"
+                                                                            height="13px" alt="edit"></a>
+                    </form>
+                </div>
+            </div>
+
+            <div class=" mx-5">
+                <form action="/create_vehicle_raffle" method="post">
+                    <input type="hidden" name="id" value="<%- raffleInfo.id %>">
+                    <input type="hidden" name="title" value="<%- raffleInfo.title %>">
+                    <button class="btn btn btn-primary w-100">Create tickets</button>
+                </form>
+                <form action="/get_tickets" method="post">
+                    <input type="hidden" name="id" value="<%- raffleInfo.id %>">
+                    <input type="hidden" name="title" value="<%- raffleInfo.title %>">
+                    <button class="btn btn btn-primary w-100">Get raffle tickets</button>
+                </form>
+                <form action="/delete_raffles" method="post">
+                    <input type="hidden" name="id" value="<%- raffleInfo.id %>">
+                    <button class="btn btn btn-primary w-100">Delete</button>
+                </form>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted"><%- raffleInfo.launchedTime %></small>
+            </div>
+        </div>
+
+    <% }) %>
+</div>
+<%- include('../admin/firstPageForAdminLogin.ejs') %>

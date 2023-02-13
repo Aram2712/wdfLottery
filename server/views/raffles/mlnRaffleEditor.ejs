@@ -1,0 +1,126 @@
+<title><%- title %></title>
+<link rel="stylesheet" href="/css/mlnEditor.css">
+<link rel="icon" href="/logos/logo.svg">
+<div class="editingBody">
+    <% params.map(raffleInfo => { %>
+        <div class="imageField">
+            <% if (raffleInfo.vehicleImage === undefined){ %>
+                <img src="<%- hostname + raffleInfo.imgPath.slice(6) %>" width="300" height="225" alt="image">
+            <% } else{ %>
+                <img src="<%- hostname + raffleInfo.vehicleImage.slice(6) %>" width="300" height="225" alt="image">
+            <% } %>
+        </div>
+        <form action="/confirm_mln_raffle_editing" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="id" value="<%- raffleInfo.id %>">
+            <input type="hidden" name="rafId" value="<%- raffleInfo.raffleId %>">
+            <input type="hidden" name="title" value="<%- raffleInfo.title %>">
+            <div class="input-group input-group-md mb-6 mb-6 mx-2 my-2 w-50">
+                <div class="input-group mb-3">
+                    <div class="custom-file">
+<!--                        <input type="file" class="custom-file-input" id="inputGroupFile01" name="newMlnRaffleImg">-->
+                    </div>
+                </div>
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Raffle status</span>
+                </div>
+                <select class="form-select" aria-label="Default select example" name="selectBox">
+                    <option selected disabled><%- raffleInfo.status %></option>
+                    <option value="Available">Available</option>
+                    <option value="Sold out">Sold out</option>
+                </select>
+            </div>
+            <% if (raffleInfo.title === 'Surprise Car' || raffleInfo.title === 'Surprise Bike'){ %>
+                <div class="inputField">
+                    <div class="input-group  input-group-ls mb-6 mb-6 mx-2 my-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Car name</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Small"
+                               aria-describedby="inputGroup-sizing-sm"
+                               name="name" value="<%- raffleInfo.name %>" required>
+                    </div>
+                    <div class="input-group input-group-ls mb-6 mb-6 mx-2 my-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Engine</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Small"
+                               aria-describedby="inputGroup-sizing-sm"
+                               name="engine" value="<%- raffleInfo.engine %>" required>
+                    </div>
+                    <div class="input-group input-group-md mb-6 mb-6 mx-2 my-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Capacity</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Small"
+                               aria-describedby="inputGroup-sizing-sm"
+                               name="capacity" value="<%- raffleInfo.capacity %>" required>
+                    </div>
+                    <div class="input-group input-group-md mb-6 mb-6 mx-2 my-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Output</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Small"
+                               aria-describedby="inputGroup-sizing-sm"
+                               name="output" value="<%- raffleInfo.output %>" required>
+                    </div>
+                    <div class="input-group input-group-md mb-6 mb-6 mx-2 my-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Transmission</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Small"
+                               aria-describedby="inputGroup-sizing-sm"
+                               name="transmission" value="<%- raffleInfo.transmission %>" required>
+                    </div>
+                    <div class="input-group input-group-md mb-6 mb-6 mx-2 my-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Exterior color</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Small"
+                               aria-describedby="inputGroup-sizing-sm"
+                               name="exterior_color" value="<%- raffleInfo.exterior_color %>" required>
+                    </div>
+                    <div class="input-group input-group-md mb-6 mb-6 mx-2 my-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Interior trim</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Small"
+                               aria-describedby="inputGroup-sizing-sm"
+                               name="interior_trim" value="<%- raffleInfo.interior_trim %>" required>
+                    </div>
+                    <div class="input-group input-group-md mb-6 mb-6 mx-2 my-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Wheels</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Small"
+                               aria-describedby="inputGroup-sizing-sm"
+                               name="wheels" value="<%- raffleInfo.wheels %>" required>
+                    </div>
+                </div>
+            <% }else if(raffleInfo.title === 'Mega Millions') { %>
+                <div class="inputField">
+                    <div class="input-group input-group-md mb-6 mb-6 mx-2 my-2 w-50">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Total amount</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Small"
+                               aria-describedby="inputGroup-sizing-sm"
+                               name="solution" value="<%- raffleInfo.solution %>" required>
+                    </div>
+
+                    <div class="inputField">
+                        <div class="input-group input-group-md mb-6 mb-6 mx-2 my-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-sm">Raffle desc.</span>
+                            </div>
+                            <input type="text" class="form-control" aria-label="Small"
+                                   aria-describedby="inputGroup-sizing-sm"
+                                   name="subRaffleTitle" value="<%- raffleInfo.subRaffleTitle %>" required>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+            <button type="submit" class="btn btn-primary d-grid gap-2 col-6 mx-auto">Confirm</button>
+        </form>
+    <% }) %>
+</div>
+<%- include('../admin/firstPageForAdminLogin.ejs') %>

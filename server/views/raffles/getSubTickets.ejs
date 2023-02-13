@@ -1,0 +1,54 @@
+<title><%- title %></title>
+<link rel="stylesheet" href="/css/ticketCards.css">
+<link rel="icon" href="/logos/logo.svg">
+
+<div class="ticketCard ">
+
+    <% params.map(infos => { %>
+        <div class=" singleCards">
+            <div class="card shadow-sm">
+                <div class="card-body cardBody">
+
+                    <img style="width: 300px;height: 225px" src="<%- infos.imgPath.slice(6) %>"
+                         alt="vehicle">
+
+                    <h4 class="card-text">ID: <%- infos.seriesNo %></h4>
+                    <ul class="moreVehicleInfo">
+                        <li>
+                            <spam class="spam">Total: </spam><%- infos.solution %></li>
+                        <li>
+                            <spam class="spam"> Status: </spam><%- infos.status %>
+                        </li>
+                        <li>
+                            <spam class="spam">Available tickets: </spam><%- infos.ticketCount %>
+                        </li>
+                        <li>
+                            <spam class="spam">Ticket price: </spam><%- infos.price %>
+                        </li>
+                    </ul>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <form action="/edit_mln_raffle" method="post">
+                                <input type="hidden" value="<%- infos.id %>" name="id">
+                                <input type="hidden" name="totalAmount" value="<%- infos.solution%>" id="solution">
+                                <input type="hidden" name="subRaffleTitle" value="<%- infos.subRaffleTitle%>" id="subRaffleTitle">
+                                <input type="hidden" name="oldImgPath" value="<%- infos.imgPath%>" id="oldImgPath">
+                                <input type="hidden" name="ticketPrice" value="<%- infos.price%>" id="price">
+                                <button type="submit" class="btn btn-sm btn-outline-secondary">Edit</button>
+                            </form>
+                            <form action="/delete_mln_sub_raffle" method="post">
+                                <input type="hidden" name="id" value="<%- infos.id %>">
+                                <input type="hidden" name="rafId" value="<%- id %>">
+                                <button type="submit" class="btn btn-sm btn-outline-secondary">Delete</button>
+                            </form>
+                        </div>
+                        <small class="text-muted"><%- infos.launchedTime %></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <% }) %>
+
+</div>
+<%- include('../admin/firstPageForAdminLogin.ejs') %>

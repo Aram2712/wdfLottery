@@ -1,0 +1,112 @@
+<title><%- title %></title>
+<link rel="stylesheet" href="/css/transactionHistory.css">
+<link rel="icon" href="/logos/logo.svg">
+
+<div class="transactionsBody">
+    <% impsInfo.map(items => { %>
+        <% if(items.pg === 'IMPS'){ %>
+            <div class="impsTransaction">
+                <div class="impsBody">
+                    <img src="<%- items.payImg.slice(6) %>" width="150" alt="screenshot">
+                </div>
+                <div class="userInfoBody">
+                    <p><span class="span">Holder name: </span><%- items.userName %> </p>
+                    <p><span class="span">Holder email: </span><%- items.userEmail %> </p>
+                    <p><span class="span">Bank ref. NO: </span><%- items.bankRefNo %> </p>
+                </div>
+                <% if(items.status === 'Initialized'){ %>
+                    <div class="statusBody">
+                        <button type="button" class="btn btn-sm btn-warning" disabled><%- items.status %></button>
+                    </div>
+                <% }else if(items.status === 'Reject'){ %>
+                    <div class="statusBody">
+                        <button type="button" class="btn btn-sm btn-danger" disabled><%- items.status %></button>
+                    </div>
+                <% } else if(items.status === 'Success'){ %>
+                    <div class="statusBody">
+                        <button type="button" class="btn btn-sm btn-success" disabled><%- items.status %></button>
+                    </div>
+                <% } %>
+                <div class="payIfo">
+                    <p><span class="span">Amount: </span><%- items.amount %></p>
+                    <p><span class="span">Ticket count: </span><%- items.ticketCount %></p>
+                    <p><span class="span">Payment method: </span><%- items.pg %></p>
+                    <p><span class="span">Ref. NO: </span><%- items.refNo %></p>
+                </div>
+                <% if(items.status === 'Initialized'){ %>
+                    <div class="requestBody">
+                        <form action="/change_gateway_status" method="post">
+                            <input type="hidden" name="id" value="<%- items.id %>">
+                            <input type="hidden" name="pg" value="<%- items.pg %>">
+                            <input type="hidden" name="refNo" value="<%- items.refNo %>">
+                            <input type="hidden" name="status" value="Success">
+                            <button type="submit" class="btn btn-success">Success</button>
+                        </form>
+                        <form action="/change_gateway_status" method="post">
+                            <input type="hidden" name="id" value="<%- items.id %>">
+                            <input type="hidden" name="pg" value="<%- items.pg %>">
+                            <input type="hidden" name="refNo" value="<%- items.refNo %>">
+                            <input type="hidden" name="status" value="Reject">
+                            <button type="submit" class="btn btn-danger" style="width: 81px;">Reject</button>
+                        </form>
+                    </div>
+                <% } %>
+            </div>
+
+        <% } %>
+    <% }) %>
+    <% upiInfo.map(params => { %>
+        <% if(params.pg === 'UPI'){ %>
+
+            <div class="impsTransaction">
+                <div class="impsBody">
+                    <img src="<%- params.payImg.slice(6) %>" width="150" alt="screenshot">
+                </div>
+                <div class="userInfoBody">
+                    <p><span class="span">Holder name: </span><%- params.userName %> </p>
+                    <p><span class="span">Holder email: </span><%- params.userEmail %> </p>
+                    <p><span class="span">Bank ref. NO: </span><%- params.bankRefNo %> </p>
+                </div>
+                <% if(params.status === 'Initialized'){ %>
+                    <div class="statusBody">
+                        <button type="button" class="btn btn-sm btn-warning" disabled><%- params.status %></button>
+                    </div>
+                <% }else if(params.status === 'Reject'){ %>
+                    <div class="statusBody">
+                        <button type="button" class="btn btn-sm btn-danger" disabled><%- params.status %></button>
+                    </div>
+                <% } else if(params.status === 'Success'){ %>
+                    <div class="statusBody">
+                        <button type="button" class="btn btn-sm btn-success" disabled><%- params.status %></button>
+                    </div>
+                <% } %>
+                <div class="payIfo">
+                    <p><span class="span">Amount: </span><%- params.amount %></p>
+                    <p><span class="span">Ticket count: </span><%- params.ticketCount %></p>
+                    <p><span class="span">Payment method: </span><%- params.pg %></p>
+                    <p><span class="span">Ref. NO: </span><%- params.refNo %></p>
+                </div>
+                <% if(params.status === 'Initialized'){ %>
+                    <div class="requestBody">
+                        <form action="/change_gateway_status" method="post">
+                            <input type="hidden" name="id" value="<%- params.id %>">
+                            <input type="hidden" name="pg" value="<%- params.pg %>">
+                            <input type="hidden" name="refNo" value="<%- params.refNo %>">
+                            <input type="hidden" name="status" value="Success">
+                            <button type="submit" class="btn btn-success">Success</button>
+                        </form>
+                        <form action="/change_gateway_status" method="post">
+                            <input type="hidden" name="id" value="<%- params.id %>">
+                            <input type="hidden" name="pg" value="<%- params.pg %>">
+                            <input type="hidden" name="refNo" value="<%- params.refNo %>">
+                            <input type="hidden" name="status" value="Reject">
+                            <button type="submit" class="btn btn-danger" style="width: 81px;">Reject</button>
+                        </form>
+                    </div>
+                <% } %>
+            </div>
+
+        <% } %>
+    <% }) %>
+</div>
+<%- include('../admin/firstPageForAdminLogin.ejs') %>

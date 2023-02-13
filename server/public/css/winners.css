@@ -1,0 +1,7 @@
+.winnersBody {
+    position: absolute;
+    left: 300px;
+    top:120px;
+    display: flex;
+    flex-direction: row-reverse;
+}

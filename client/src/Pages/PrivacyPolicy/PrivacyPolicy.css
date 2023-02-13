@@ -1,0 +1,61 @@
+.Terms {
+    width: 100%;
+    height:auto;
+    background-color: #000F26;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.terms_head_box {
+    width: 100%;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 90px;
+    background: #013344
+}
+.terms_head_text {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 35px;
+    color: #FFFFFF;
+    margin: 10px 0;
+}
+.terms_main_box {
+    width: 80%;
+    height: auto;
+    /* border: 1px solid whitesmoke; */
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0;
+}
+.terms_main_text {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 170.18%;
+    text-align: justify;
+    color: #FFFFFF;
+    opacity: 0.5;
+}
+
+@media screen and (max-width:800px) {
+    .terms_head_text {
+        font-size: 25px;
+        line-height: 30px;
+    }
+}
+@media screen and (max-width:567px) {
+    .terms_head_text {
+        font-size: 20px;
+        line-height: 25px;
+        text-align: center;
+    }
+    .terms_head_box{
+        height: 100px;
+    }
+}

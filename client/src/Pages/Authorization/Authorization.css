@@ -1,0 +1,50 @@
+.Authorization_component {
+    width: 100%;
+    height:100vh;
+    background: #000F26;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+}
+.authorization_page_fon1{
+    width: 40%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.authorization_page_fon2{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.Authorization_component_center_box {
+    width: 100%;
+    max-width: 900px;
+    height: 100%;
+    max-height: 700px;
+    display: flex;
+    position: relative;
+}
+.authorization_sharik {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 50px;
+    left:120px
+}
+.authorization_bitcoin_image {
+    width: 330px !important;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    right:0
+}
+
+@media screen and (max-width:850px) {
+
+    .authorization_bitcoin_image, .authorization_sharik{
+        display: none;
+    }
+}

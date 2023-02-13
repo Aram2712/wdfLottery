@@ -1,0 +1,26 @@
+<title><%- title %></title>
+<link rel="stylesheet" href="/css/raffleEditorPage.css">
+<link rel="icon" href="/logos/logo.svg">
+<div class="raffleEditBody">
+    <form action="/send_changed_info" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="raffleId" value="<%- result.id%>">
+        <input type="hidden" name="oldImage" value="<%- result.raffleImg%>">
+        <div class="editInfoContent">
+            <div class="imageField">
+                <img id="raffleImg" src="<%- hostname + result.raffleImg.slice(6) %>" alt="raffleImage">
+                <input type="file" name="newRaffleImg">
+            </div>
+            <div class="inputFields">
+                <div class="input-group-field">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Raffle description</span>
+                    </div>
+                    <textarea id="textArea" name="description" class="form-control" aria-label="With textarea"><%- result.raffleDesc%></textarea>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Confirm</button>
+        </div>
+    </form>
+</div>
+
+<%- include('../admin/firstPageForAdminLogin.ejs') %>

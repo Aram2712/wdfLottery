@@ -1,0 +1,127 @@
+<title><%- title %></title>
+<link rel="stylesheet" href="/css/createSubRaffle.css">
+<link rel="icon" href="/logos/logo.svg">
+<%- include('../admin/firstPageForAdminLogin.ejs') %>
+<body>
+<div class="vehiclesCreator ">
+    <div class="steps">
+        <div class="circle1"><h3>✓</h3></div>
+        <div class="line"></div>
+        <div class="circle2"><h3>✓</h3></div>
+    </div>
+    <div class="formBody">
+        <div>
+            <img src="" alt="" id="image" width="100" height="90" class="hide">
+        </div>
+        <form enctype="multipart/form-data" action="/create_vehicle_sub_raffle" method="post">
+            <input type="hidden" name="id" value="<%- id %>">
+            <div>
+                <div class="input-group input-group-md mb-6 mx-2 my-2">
+                    <input type="file" class="form-control" id="inputEmail4" name="vehicleImg" onchange="previewFile()"
+                           required>
+                </div>
+                <div class="input-group input-group-md mb-6 mb-6 mx-2 my-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Series NO</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                           name="seriesNo" required>
+                </div>
+            </div>
+            <div>
+                <div class="input-group input-group-md mb-6 mb-6 mx-2 my-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Name</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                           name="name" required>
+                </div>
+                <div class="input-group input-group-md mb-6 mb-6 mx-2 my-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Engine</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                           name="engine" required>
+                </div>
+            </div>
+            <div>
+                <div class="input-group input-group-md mb-6 mb-6 mx-2 my-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Capacity</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                           name="capacity" required>
+                </div>
+                <div class="input-group input-group-md mb-6 mb-6 mx-2 my-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Output</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                           name="output" required>
+                </div>
+            </div>
+            <div>
+                <div class="input-group input-group-md mb-6 mb-6 mx-2 my-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Transmission</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                           name="transmission" required>
+                </div>
+                <div class="input-group input-group-md mb-6 mb-6 mx-2 my-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Exterior Color</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                           name="exterior_color" required>
+                </div>
+            </div>
+            <div>
+                <div class="input-group input-group-md mb-6 mb-6 mx-2 my-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Interior Trim</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                           name="interior_trim" required>
+                </div>
+                <div class="input-group input-group-md mb-6 mb-6 mx-2 my-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Wheels</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                           name="wheels" required>
+                </div>
+            </div>
+            <div class="input-group input-group-md mb-6 mb-6 mx-2 my-2">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Date for launch</span>
+                </div>
+                <input type="date" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                       name="date" required>
+            </div>
+            <div class="col-5 my-3 mx-auto">
+                <button type="submit" class="btn btn-primary px-5">Create</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function previewFile() {
+            let img = document.getElementById('image');
+            let showImage = document.querySelector('input[type=file]').files[0]
+            let reader = new FileReader();
+            reader.onloadend = function () {
+                img.classList.remove('hide');
+                img.style.marginLeft = '10px'
+                img.src = reader.result;
+            }
+            if (showImage) {
+                reader.readAsDataURL(showImage);
+            } else {
+                img.src = "";
+            }
+        }
+    </script>
+</div>
+
+</body>

@@ -1,0 +1,57 @@
+<title><%- title %></title>
+<link rel="stylesheet" href="/css/createRaffle.css">
+<link rel="icon" href="/logos/logo.svg">
+<%- include('../admin/firstPageForAdminLogin.ejs') %>
+<style>
+    .hide {
+        display: none;
+    }
+</style>
+<body>
+<main class="row raffleMenu">
+    <form class="g-3 col-md-9 ms-sm-auto col-lg-8 px-md-4 createRaffle" action="/create_raffle" method="post"
+          enctype="multipart/form-data">
+        <div class="col-md-6">
+            <input type="file" class="form-control" id="inputEmail4" name="raffleImg" required>
+        </div>
+
+        <div class="col-md-6">
+            <label for="inputTitle4" class="form-label">Title</label>
+            <select class="form-select" aria-label="Default select example" name="title" id="inputTitle4select">
+                <option selected disabled>Open this select menu</option>
+                <option value="Mega Millions">Mega Millions</option>
+                <option value="Surprise Car">Surprise Car</option>
+                <option value="Surprise Bike">Surprise Bike</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <div class="col-md-6 hide" id="titleNameInput">
+            <input type="text" class="form-control" id="inputTitle4" name="title">
+        </div>
+        <div class="col-6">
+            <label for="inputDate" class="form-label">Date</label>
+            <input type="date" class="form-control" id="inputDate" name="date">
+        </div>
+        <div class="col-6">
+            <label for="inputDesc" class="form-label">Description</label>
+            <textarea class="form-control" id="inputDesc" name="desc">  </textarea>
+        </div>
+        <div class="col-8 my-3 mx-auto">
+            <button type="submit" class="btn btn-primary px-5">Create</button>
+        </div>
+    </form>
+
+</main>
+<script>
+    let select = document.getElementById('inputTitle4select');
+    let titleNameInput = document.getElementById('titleNameInput');
+    select.addEventListener('click', () => {
+        if (select.value === 'other') {
+            select.classList.add('hide')
+            titleNameInput.classList.remove('hide')
+        }
+
+    })
+
+</script>
+</body>

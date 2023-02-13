@@ -1,0 +1,40 @@
+<title><%- title %></title>
+<link rel="stylesheet" href="/css/ownerInfo.css">
+<link rel="icon" href="/logos/logo.svg">
+
+<div class="ownerInfoBody">
+
+    <div class="bankInfos">
+        <% result.map(bankItems => { %>
+            <div class="upi">
+                <% if(bankItems.payMethod === 'UPI'){ %>
+                    <h3><%- bankItems.payMethod %></h3>
+                    <img src="<%- bankItems.qrPath.slice(6) %>" width="200" height="200" alt="QR">
+                    <p><span>VPA code:</span> <%- bankItems.vpaCode %></p>
+                    <form action="/edit_wallet_info" method="post">
+                        <input type="hidden" name="id" value="<%- bankItems.id %>">
+                        <input type="hidden" name="payMethod" value="<%- bankItems.payMethod %>">
+                        <button class="btn btn-secondary">Edit</button>
+                    </form>
+                <% } %>
+            </div>
+            <div class="imps">
+                <% if(bankItems.payMethod === 'IMPS'){ %>
+                    <h3><%- bankItems.payMethod %></h3>
+                    <p><span>Account NO:</span> <%- bankItems.accNo %></p>
+                    <p><span>IFSC Code:</span> <%- bankItems.ifscCode %></p>
+                    <p><span>Account holder:</span> <%- bankItems.holderName %></p>
+                    <p><span>Bank name:</span> <%- bankItems.bankName %></p>
+                    <form action="/edit_wallet_info" method="post">
+                        <input type="hidden" name="id" value="<%- bankItems.id %>">
+                        <input type="hidden" name="payMethod" value="<%- bankItems.payMethod %>">
+                        <button class="btn btn-secondary">Edit</button>
+                    </form>
+                <% } %>
+            </div>
+        <% }) %>
+    </div>
+
+</div>
+
+<%- include('../admin/firstPageForAdminLogin.ejs') %>

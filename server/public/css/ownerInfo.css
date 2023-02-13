@@ -1,0 +1,12 @@
+.ownerInfoBody{
+    position: absolute;
+    left: 260px;
+    top: 80px;
+    width: 700px;
+}
+.bankInfos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}

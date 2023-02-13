@@ -1,0 +1,40 @@
+<title><%- title %></title>
+<link rel="stylesheet" href="/css/usersList.css">
+<link rel="icon" href="/logos/logo.svg">
+
+<div class="usersTable">
+    <table class="table table-striped-columns table-dark">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Gender:</th>
+            <th scope="col">First name:</th>
+            <th scope="col">Last name:</th>
+            <th scope="col">Email address:</th>
+            <th scope="col">Nationality:</th>
+            <th scope="col">Phone NO:</th>
+        </tr>
+        </thead>
+        <% result.map(usersParams => { %>
+
+            <tbody>
+            <tr>
+
+                <% if(usersParams.userImg === null){ %>
+                    <th scope="row"><img src="/icons/user.svg" alt="img"></th>
+                <% }else{ %>
+                    <th scope="row"><img src="<%- usersParams.userImg.slice(6) %>" alt="img" width="24px" height="24px"></th>
+                <% } %>
+                <td><%- usersParams.title %></td>
+                <td><%- usersParams.firstName %></td>
+                <td><%- usersParams.lastName %></td>
+                <td><%- usersParams.email %></td>
+                <td><%- usersParams.nationality %></td>
+                <td><%- usersParams.phoneNo %></td>
+            </tr>
+            </tbody>
+        <% }) %>
+
+    </table>
+</div>
+<%- include('../admin/firstPageForAdminLogin.ejs') %>

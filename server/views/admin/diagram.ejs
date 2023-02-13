@@ -1,0 +1,78 @@
+<link rel="stylesheet" href="/css/diagram.css">
+<link rel="icon" href="/logos/logo.svg">
+<div class="diagramBody">
+    <div id="diagram">
+        <span id="count"><%- usersCount %></span>
+        <span id="ticketCount"><%- ticketCount%></span>
+        <span id="vehicleTicketCount"><%- vehicleTicketCount%></span>
+        <span id="mlnTicketCount"><%- mlnTicketCount%></span>
+        <span id="subscribers"><%- subscribers%></span>
+        <script>
+            window.onload = function () {
+                let count = document.getElementById('count');
+                let ticketCount = document.getElementById('ticketCount');
+                let vehicleTicketCount = document.getElementById('vehicleTicketCount');
+                let mlnTicketCount = document.getElementById('mlnTicketCount');
+                let subscribers = document.getElementById('subscribers');
+                mlnTicketCount.style.display = 'none';
+                subscribers.style.display = 'none';
+                vehicleTicketCount.style.display = 'none';
+                count.style.display = 'none';
+                ticketCount.style.display ='none';
+                const chart = new CanvasJS.Chart("chartContainer", {
+                    animationEnabled: true,
+                    theme: "light2",
+                    title: {
+                        text: "World Duty Free"
+                    },
+                    axisY: {
+                        title: "WDF"
+                    },
+                    data: [{
+                        legendText:"Users amount" ,
+                        dataPoints: [
+                            {y: Number(count.innerText), label: "Users"},
+                            {y: Number(ticketCount.innerText), label: "Bought tickets"},
+                            {y: Number(vehicleTicketCount.innerText), label: "Vehicle tickets"},
+                            {y: Number(mlnTicketCount.innerText), label: "Million tickets"},
+                            {y: Number(subscribers.innerText), label: "Subscribers"},
+                        ]
+                    }]
+                });
+                chart.render();
+            }
+        </script>
+        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    </div>
+    <div class="rafflesBody">
+        <% mlnRaffle.map(mlnInfo => { %>
+            <div class="cardInfo">
+                <div class="cardImg">
+                    <img src="<%- mlnInfo.imgPath.slice(6)%>" alt="img" width="100px" height="100px">
+                </div>
+                <div class="mlnText">
+                    <h6>Title: <small><%- mlnInfo.title %></small></h6>
+                    <h6>Launched time: <small><%- mlnInfo.launchedTime %></small></h6>
+                    <h6>Status: <small><%- mlnInfo.status %></small></h6>
+                    <h6>Series NO: <small><%- mlnInfo.seriesNo %></small></h6>
+                </div>
+                
+            </div>
+        <% }) %>
+        <% vehicleResult.map(vehicleInfo => { %>
+            <div class="cardInfo">
+                <div class="cardImg">
+                    <img src="<%- vehicleInfo.vehicleImage.slice(6)%>" alt="img" width="100px" height="100px">
+                </div>
+                <div class="vehicleText">
+                    <h6>Title: <small><%- vehicleInfo.title %></small></h6>
+                    <h6>Launched time: <small><%- vehicleInfo.launchedTime %></small></h6>
+                    <h6>Status: <small><%- vehicleInfo.status %></small></h6>
+                    <h6>Series NO: <small><%- vehicleInfo.seriesNo %></small></h6>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</div>
+<%- include('../admin/firstPageForAdminLogin.ejs') %>

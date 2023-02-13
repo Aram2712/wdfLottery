@@ -1,0 +1,23 @@
+.infoBody{
+    position: absolute;
+    left: 300px;
+    top:120px;
+    max-height: 500px;
+    overflow-y: scroll;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.infoBody::-webkit-scrollbar{
+    width: 5px;
+    border-bottom: 1px solid rgba(58, 53, 53, 0.4);
+}
+
+.infoBody::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.infoBody::-webkit-scrollbar-thumb {
+    background: #00AB9B;
+    border-radius: 6px;
+}

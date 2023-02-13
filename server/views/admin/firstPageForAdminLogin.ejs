@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Arman Galstyan VB Techno Solutions LLC">
+    <meta name="generator" content="Hugo 0.104.2">
+    <title><%- title %></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/firstPage.css">
+    <link rel="icon" href="/logos/logo.svg">
+</head>
+<body>
+
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <form action="/main_page" method="post" class="mainPage">
+        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-5 fs-4" href="#" onclick="this.parentNode.submit()">
+            <img src="/logos/logo.svg" alt="logo">
+        </a>
+    </form>
+    <!--    <input class="form-control form-control-dark w-50 rounded-0 border-0" type="text" placeholder="Search"-->
+    <!--           aria-label="Search">-->
+    <div class="navbar-nav">
+        <div class="nav-item text-nowrap">
+            <form action="/sign_out" method="post" class="mainPage">
+                <a class="nav-link px-3" href="#" onclick="this.parentNode.submit()">Sign out</a>
+            </form>
+        </div>
+    </div>
+</header>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse">
+            <div class="position-sticky pt-3 sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <form action="/users" method="post">
+                            <a href="#" onclick="this.parentNode.submit()" class="user-form nav-link">
+                                <img src="/icons/user.svg" alt="users">
+                                <span>User list</span>
+                            </a>
+                        </form>
+                    </li>
+                    <li class="nav-item">
+                        <form action="/create_ticket" method="post">
+                            <a href="#" onclick="this.parentNode.submit()" class="user-form nav-link">
+                                <img src="/icons/create.svg" alt="ticket">
+                                <span>Create raffles</span>
+                            </a>
+                        </form>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <div class="dropdown">
+                            <a class="btn btn-dark dropdown-toggle" href="#" role="button"
+                               data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="/icons/options.svg" alt="opt">
+                                Options
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <form action="/get_bought_tickets" method="post">
+                                        <a class="dropdown-item" href="#" onclick="this.parentNode.submit()">
+                                            <img src="/icons/bought.svg" alt="ticket">
+                                            Bought tickets
+                                        </a>
+                                    </form>
+                                </li>
+                                <li>
+                                    <form action="/get_raffles" method="post">
+                                        <a class="dropdown-item" href="#" onclick="this.parentNode.submit()">
+                                            <img src="/icons/raffle.svg" alt="ticket">
+                                            Get raffles
+                                        </a>
+                                    </form>
+                                </li>
+                                <li>
+                                    <form action="/get_winners" method="post">
+                                        <a class="dropdown-item" href="#" onclick="this.parentNode.submit()">
+                                            <img src="/icons/win-win.png" alt="ticket">
+                                            Winners
+                                        </a>
+                                    </form>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+
+                    </li>
+                    <li class="nav-item">
+
+                    </li>
+                </ul>
+                <ul class="nav flex-column mb-2">
+                    <li class="nav-item">
+                        <form action="/winners" method="post">
+                            <a href="#" onclick="this.parentNode.submit()" class="user-form nav-link">
+                                <img src="/icons/winners.png" alt="winners" width="24" height="24">
+                                <span>Create winners info</span>
+                            </a>
+                        </form>
+                    </li>
+                    <li class="nav-item">
+                        <form action="/transaction_history" method="post">
+                            <a href="#" onclick="this.parentNode.submit()" class="user-form nav-link">
+                                <img src="/icons/transaction.png" alt="transaction" width="24" height="24">
+                                <span>Transactions</span>
+                            </a>
+                        </form>
+                    </li>
+                    <li class="nav-item">
+                        <form action="/owner_wallet" method="post">
+                            <a href="#" onclick="this.parentNode.submit()" class="user-form nav-link">
+                                <img src="/icons/wallet.png" alt="wallet" width="24" height="24">
+                                <span>Wallet</span>
+                            </a>
+                        </form>
+                    </li>
+                    <li class="nav-item">
+
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+
+        </main>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>

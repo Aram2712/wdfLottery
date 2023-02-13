@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Open+Sans:wght@500&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&family=Open+Sans:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&family=Open+Sans:wght@600&display=swap');
+
+.react-multiple-carousel__arrow--left, .react-multiple-carousel__arrow--right {
+      display: none;
+}
+.winners_slider_box {
+      width:70%;
+      height: 100%;
+}
+
+.winner_slider_image_box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      height: 280px;
+}
+.winner_slider_image_box>img{
+      width: 90%;
+      height: 100%;
+}
+.winner_slider_image_opacity_box {
+      width: 90%;
+      height: 100%;
+      position: absolute;
+      background: linear-gradient(180deg, rgba(0, 15, 38, 0) 0%, #000F26 100%);
+      border-radius: 9px;
+}
+.winner_image_info_box {
+      width: 90%;
+      height: 100%;
+      position: absolute;
+      border-radius: 9px;
+      display: flex;
+      flex-direction: column;
+      z-index: 10;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      display: none;
+}
+.winner_slider_image_box:hover .winner_image_info_box {
+      display: flex;
+}
+.winner_image_info_header_box {
+      width: 100%;
+      height: 30%;
+      display: flex;
+      align-items: center;
+      background: rgba(0, 15, 38, 0.9);
+}
+
+.winner_image_info_series, .winner_image_info_series_number{
+      font-family: 'Open Sans', sans-serif;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 26px;
+      text-transform: capitalize;
+      color: #FFFFFF;
+}
+.winner_image_info_series{
+      margin-left: 15%;
+}
+.winner_image_info_main_box {
+      width: 100%;
+      height: 70%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #FFFFFF;
+}
+
+.winner_image_info_name_box{
+      width: 70%;
+      height: 30%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      font-family: 'Open Sans';@import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&family=Open+Sans:wght@300&display=swap');
+      font-size: 18px;
+      line-height: 25px;
+      letter-spacing: 0.03em; 
+      text-transform: capitalize;
+      color: #000000;
+}
+.winner_image_data_box {
+      width: 70%;
+      height: 70%;
+      display: flex;
+}
+.winner_data_box,.winner_data_value_box {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+}
+.winner_data_data,.winner_data_value {
+      font-family: 'Stint Ultra Condensed';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 16px;
+      display: flex;
+      align-items: center;
+      letter-spacing: 0.11em;
+      text-transform: capitalize;
+      color: #008681;
+      margin: 7px;
+
+}
+.winner_data_value{
+      color: #000000;
+
+}
+@media screen and (max-width:600px){
+      .winner_slider_image_box>img {
+            width: 90%;
+      }
+}

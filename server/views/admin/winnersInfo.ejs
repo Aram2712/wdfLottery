@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="/css/winnersInfo.css">
+<link rel="icon" href="/logos/logo.svg">
+
+<div class="infoBody">
+    <%winnersInfo.map(info => {%>
+        <div class="card mx-2 my-2" style="width: 18rem;">
+            <img class="card-img-top" src="<%- info.winnerImg.slice(6)%>" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title"><%- info.drawSeriesNo%></h5>
+                <p class="card-text"><strong>Winner name: </strong><%- info.fullName%></p>
+                <p class="card-text"><strong>Draw date: </strong><%- info.drawDate%></p>
+                <p class="card-text"><strong>Ticket NO: </strong><%- info.ticketNo%></p>
+                <p class="card-text"><strong>Nationality: </strong><%- info.nationality%></p>
+            </div>
+        </div>
+    <%})%>
+
+
+</div>
+
+<%- include('../admin/firstPageForAdminLogin.ejs') %>

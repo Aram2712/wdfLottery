@@ -1,0 +1,67 @@
+<link rel="stylesheet" href="/css/winners.css">
+<link rel="icon" href="/logos/logo.svg">
+<style>
+    .hide {
+        display: none;
+    }
+</style>
+<div class="winnersBody">
+    <img src="" alt="" id="image" width="200" height="150" class="hide">
+    <form action="/create_winner_info" method="post" enctype="multipart/form-data">
+        <input type="file" name="winnerImg" id="winnerImg" onchange="previewFile()" required>
+        <div class="my-2">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-md">Series NO</span>
+            </div>
+            <select class="form-select" aria-label="Default select example" name="seriesNo" id="inputTitle4select"
+                    required>
+                <option selected disabled>Open this select menu</option>
+                <% vehicleSeriesNo.map(info =>  { %>
+                    <option value="<%- info.seriesNo %>"><%- info.seriesNo %></option>
+                <% }) %>
+                <% mlnSeriesNo.map(info => { %>
+                    <option value="<%- info.seriesNo %>"><%- info.seriesNo %></option>
+                <% }) %>
+            </select>
+        </div>
+        <div class="my-2">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-md">Winner name</span>
+            </div>
+            <select class="form-select" aria-label="Default select example" name="fullName" id="inputTitle4select"
+                    required>
+                <option selected disabled>Open this select menu</option>
+                <% userFullName.map(info => { %>
+                    <option value="<%- info.firstName + ' ' + info.lastName %>"><%- info.firstName + ' ' + info.lastName %></option>
+                <% }) %>
+            </select>
+        </div>
+        <div class="my-2">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-md">Ticket NO</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Small"
+                   name="ticketNo" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <script>
+        function previewFile() {
+            let img = document.getElementById('image');
+            let showImage = document.querySelector('input[type=file]').files[0]
+            let reader = new FileReader();
+            reader.onloadend = function () {
+                img.classList.remove('hide');
+                img.style.marginLeft = '10px'
+                img.src = reader.result;
+            }
+            if (showImage) {
+                reader.readAsDataURL(showImage);
+            } else {
+                img.src = "";
+            }
+        }
+    </script>
+</div>
+
+<%- include('../admin/firstPageForAdminLogin.ejs') %>

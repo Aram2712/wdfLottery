@@ -1,0 +1,41 @@
+.raffleCardBody{
+    position: absolute;
+    left: 260px;
+    top: 90px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-height: 520px;
+    overflow-y: scroll;
+}
+
+.raffleCardBody::-webkit-scrollbar{
+    width: 5px;
+    border-bottom: 1px solid rgba(58, 53, 53, 0.4);
+}
+
+.raffleCardBody::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.raffleCardBody::-webkit-scrollbar-thumb {
+    background: #00AB9B;
+    border-radius: 6px;
+}
+
+.raffleCardImg{
+    height: 151.7427520751953px;
+    width: 339.140869140625px;
+    border-radius: 8.291954040527344px;
+}
+
+.cardBody{
+    width: 340px;
+}
+.editButton{
+    padding: 15px;
+}
+.header{
+    display: flex;
+    align-items: center;
+}

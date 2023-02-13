@@ -1,0 +1,25 @@
+.user-form{
+    display: flex;
+    align-items: center;
+    width: 170px;
+}
+.mainPage{
+    margin:0;
+}
+.user-form span{
+    color: white;
+    margin: 6px;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.user-form span:hover{
+    color: #00BFC9;
+}
+#sidebarMenu{
+    height: 100vh;
+}
+.nav-item form{
+    margin:0;
+
+}

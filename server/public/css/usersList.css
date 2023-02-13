@@ -1,0 +1,20 @@
+.usersTable{
+    position: absolute;
+    top:100px;
+    left:260px;
+    max-height: 600px;
+    overflow-y: scroll;
+}
+.usersTable::-webkit-scrollbar{
+    width: 5px;
+    border-bottom: 1px solid rgba(58, 53, 53, 0.4);
+}
+
+.usersTable::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.usersTable::-webkit-scrollbar-thumb {
+    background: #00AB9B;
+    border-radius: 6px;
+}

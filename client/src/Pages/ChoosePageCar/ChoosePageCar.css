@@ -1,0 +1,308 @@
+.ChoosePage {
+    /* border: 1px solid black; */
+    width: 100%;
+    height: auto;
+    margin-top: 90px;
+    background: #000F26;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.choose_page_top_box {
+    /* border: 1px solid; */
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+.choose_page_top_text_box {
+    /* border: 1px solid; */
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+}
+
+.world_duty_free {
+    font-family: 'Crimson Text';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 26px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: #00FFF6;
+    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    margin: 15% 0 10px 15%;
+}
+.surprise_luxury_head {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 35px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    margin: 0 0 0 15%;
+
+
+}
+.surprise_luxury_text {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #FFFFFF;
+    opacity: 0.7;
+    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    margin: 30px 0 0 15%;
+
+
+}
+.choose_page_top_image_box {
+    /* border: 1px solid white; */
+    width: 60%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.choose_big_image {
+    width: 100%;
+    height: auto;
+}
+.buy_tickets_head_box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.choose_your_lucky_number {
+    font-family: 'Stint Ultra Condensed';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.23em;
+    text-transform: uppercase;
+    color: #06C5BE;
+    margin: 0;
+}
+.buy_tickets_head {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 49px;
+    letter-spacing: 0.02em;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    margin: 10px 0;
+}
+
+.tickets_carusel_box{
+    max-width: 1250px;
+    width: 85%;
+    margin:auto ;
+    padding: 50px 0;
+}
+.slick-slide{
+    display: flex !important;
+    justify-content: center !important;
+   
+}
+.carusel_slide_box{
+    width: 300px !important;
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.slide_image_box{
+    width: 100%;
+    height: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to top, rgba(0, 255, 245, 0.5) 24.26%, rgba(0, 255, 245, 0.05) 100.01%);
+    backdrop-filter: blur(8.51943px);   
+    position: relative;
+
+}
+.clientsCarousel {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+}
+.slide_image_status_image {
+    position: absolute;
+    left: 0;
+    top: 20px;
+}
+.slide_series_number_box {
+    width: 100%;
+    height: 10%;
+    /* border: 1px solid; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(95.27deg, #DB9A27 -20.46%, #DB9A27 2.86%, #DEDEDE 24.23%, #D3C4B0 26.17%, #C8AB84 29.09%, #BF965E 32%, #B7853E 33.94%, #B17726 36.86%, #AD6D15 39.77%, #AB680B 43.66%, #AA6608 47.54%, #D0C888 76.69%);
+}
+.slide_series_number_text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: #FFFFFF;
+}
+.slide_data_box {
+    width: 100%;
+    height: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    /* border: 1px solid; */
+    background: rgba(255, 255, 255, 0.1);
+}
+.product_name {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 94.02%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: #FFFFFF;
+    margin: 0;
+}
+.pruduct_color {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 94.02%;
+    letter-spacing: 0.01em;
+    color: #FFFFFF;
+    opacity: 0.7;
+    margin: 0;
+
+}
+.product_count {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 94.02%;
+    letter-spacing: 0.01em;
+    color: #06C5BE;
+    margin: 0;
+
+}
+.product_count>span {
+    font-size: 20px;
+    font-weight: 300;
+}
+.product_prize_price {
+    color:rgba(255, 255, 255, 0.5);
+    font-size: 16px;
+    font-weight: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+}
+.ticket_remaining_button {
+    width: 200px;
+    height: 40px;
+    background: linear-gradient(93.43deg, #098A85 -9.98%, #77DAD6 17.22%, #159590 80.65%, #74D8D4 107.13%);
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    color: black;
+    margin: 0;
+
+}
+.ticket_remaining_button:hover {
+    background: linear-gradient(to right, #74D8D4 ,  #098A85, #74D8D4 );
+
+}
+.ticket_price {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 94.02%;
+    letter-spacing: 0.01em;
+    color: #FFFFFF;
+    opacity: 0.7;
+    margin: 0;
+
+}
+.ticket_price_span {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 94.02%;
+    letter-spacing: 0.01em;
+    color: #FFFFFF;
+    margin: 0;
+
+}
+.link_to_buy_tickets {
+    text-decoration: none;
+    color: white;
+
+}
+
+@media screen and (max-width:992px) {
+    .world_duty_free {
+        font-size: 15px;
+        line-height: 20px;
+    }
+    .surprise_luxury_head {
+        font-size: 20px;
+        line-height: 28px;
+    }
+    .surprise_luxury_text {
+        font-size: 13px;
+        line-height: 18px;
+    }
+    br{
+        display: none;
+    }
+}
+@media screen and (max-width:700px) {
+    .choose_page_top_box {
+        flex-direction: column;
+        align-items: center;
+        /* margin-top: 70px; */
+
+    }
+    .choose_page_top_text_box {
+        width: 80%;
+    }
+    .choose_page_top_image_box {
+        width: 100%;
+        margin: 50px 0;
+    }
+}
+
+@media screen and (max-width:576px) {
+    .ChoosePage{
+        margin-top: 70px;
+    }
+    .buy_tickets_head {
+        font-size: 30px;
+    }
+    .choose_your_lucky_number {
+        font-size: 15px;
+    }
+}

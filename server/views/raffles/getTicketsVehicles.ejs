@@ -1,0 +1,56 @@
+<title><%- title %></title>
+<link rel="stylesheet" href="/css/ticketCards.css">
+<link rel="icon" href="/logos/logo.svg">
+
+<div class="ticketCard ">
+    <% params.map(infos => { %>
+        <div class=" singleCards">
+            <div class="card shadow-sm">
+
+                <div class="card-body" id="cardBody">
+
+                    <img style="width: 300px;height: 225px" src="<%- infos.vehicleImage.slice(6) %>"
+                         alt="vehicle">
+
+                    <h4 class="card-text">Name: <%- infos.name %></h4>
+                    <h6 class="card-text">Status: <span id="status"></span><%- infos.status %></h6>
+                    <ul class="moreVehicleInfo">
+                        <li>
+                            <spam class="spam">Engine:</spam><%- infos.engine %>
+                        </li>
+                        <li>
+                            <spam class="spam">Capacity:</spam><%- infos.capacity %>
+                        </li>
+                        <li>
+                            <spam class="spam">Output:</spam><%- infos.output %>
+                        </li>
+                        <li>
+                            <spam class="spam">Ticket count:</spam><%- infos.ticketCount %>
+                        </li>
+                        <li>
+                            <spam class="spam">Ticket price:</spam><%- infos.price %>
+                        </li>
+
+                    </ul>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <form action="/edit_vehicle_raffle" method="post">
+                                <input type="hidden" value="<%- infos.id %>" name="id">
+                                <button type="submit" class="btn btn-sm btn-outline-secondary">Edit</button>
+                            </form>
+                            <form action="/delete_vehicle_sub_raffle" method="post">
+                                <input type="hidden" name="id" value="<%- infos.id %>">
+                                <input type="hidden" name="remId" value="<%- id %>">
+                                <button type="submit" class="btn btn-sm btn-outline-secondary">Delete</button>
+                            </form>
+                        </div>
+                        <small class="text-muted"><%- infos.launchedTime%></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <% }) %>
+
+</div>
+<%- include('../admin/firstPageForAdminLogin.ejs') %>

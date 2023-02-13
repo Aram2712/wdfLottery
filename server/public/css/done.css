@@ -1,0 +1,10 @@
+.doneBody {
+    position: absolute;
+    width: 600px;
+    top: 100px;
+    left: 300px;
+}
+
+.doneBody form {
+    text-align: center;
+}

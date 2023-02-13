@@ -1,0 +1,41 @@
+.ticketBodyCreator {
+    position: absolute;
+    left: 260px;
+    top: 120px;
+    width: 700px;
+}
+
+.steps {
+    display: flex;
+    justify-content: center;
+}
+
+.line {
+    width: 50px;
+    border-bottom: 1px green solid;
+    margin: 0 15px 25px 15px;
+}
+
+.circle1 h3 {
+    color: green;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+.bodyForm {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.loading-position {
+    position: absolute;
+    top: 100px;
+    left: 500px;
+}
+
+.loading-position button {
+    width: 250px;
+    height: 100px;
+}

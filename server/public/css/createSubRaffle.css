@@ -1,0 +1,25 @@
+.vehiclesCreator{
+    left: 300px;
+    position: absolute;
+    top: 80px;
+    width: 700px;
+}
+
+.formBody form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.steps{
+    display: flex;
+    justify-content: center;
+}
+.line{
+    width: 50px;
+    border-bottom: 1px black solid;
+    margin: 0 15px 25px 15px;
+}
+.hide{
+    display: none;
+}

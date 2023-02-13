@@ -1,0 +1,10 @@
+.editingBody {
+    position: absolute;
+    left: 260px;
+    top: 80px;
+    width: 700px;
+}
+
+.impsEditorBody {
+    text-align: center;
+}

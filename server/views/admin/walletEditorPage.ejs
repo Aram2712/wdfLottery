@@ -1,0 +1,74 @@
+<title><%- title %></title>
+<link rel="stylesheet" href="/css/walletEditorPage.css">
+<link rel="icon" href="/logos/logo.svg">
+<div class="editingBody">
+    <% if(walletInfo.payMethod === 'UPI'){ %>
+        <div class="upiEditorBody">
+            <form action="/confirm_editing_wallet" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="<%- walletInfo.id %>">
+                <input type="hidden" name="payMethod" value="<%- walletInfo.payMethod %>">
+                <img src="<%- walletInfo.qrPath.slice(6) %>" width="200" height="200" alt="qr" id="image">
+                <input type="file" onchange="previewFile()" name="upiQr" >
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">VPN code</span>
+                    </div>
+                    <input type="text" name="vpaCode" value="<%- walletInfo.vpaCode %>" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary">Confirm</button>
+            </form>
+        </div>
+        <script>
+            function previewFile() {
+                let img = document.getElementById('image');
+                let showImage = document.querySelector('input[type=file]').files[0]
+                let reader = new FileReader();
+                reader.onloadend = function () {
+                    img.src = reader.result;
+                }
+                if (showImage) {
+                    reader.readAsDataURL(showImage);
+                } else {
+                    img.src = "<%- walletInfo.qrPath %>";
+                }
+            }
+        </script>
+    <% }else if(walletInfo.payMethod === 'IMPS'){ %>
+        <div class="impsEditorBody">
+            <h4><%- walletInfo.payMethod %></h4>
+            <form action="/confirm_editing_wallet" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="<%- walletInfo.id %>">
+                <input type="hidden" name="payMethod" value="<%- walletInfo.payMethod %>">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Account NO:</span>
+                    </div>
+                    <input type="text" name="accNo" value="<%- walletInfo.accNo %>" class="form-control">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">IFSC code:</span>
+                    </div>
+                    <input type="text" name="ifscCode" value="<%- walletInfo.ifscCode %>" class="form-control">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Account holder:</span>
+                    </div>
+                    <input type="text" name="holderName" value="<%- walletInfo.holderName %>" class="form-control">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Bank name:</span>
+                    </div>
+                    <input type="text" name="bankName" value="<%- walletInfo.bankName %>" class="form-control">
+                </div>
+                <button class="btn btn-primary" type="submit">Confirm</button>
+            </form>
+        </div>
+    <% } %>
+</div>
+<%- include('../admin/firstPageForAdminLogin.ejs') %>

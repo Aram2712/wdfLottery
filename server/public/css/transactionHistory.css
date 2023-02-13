@@ -1,0 +1,34 @@
+.transactionsBody{
+    position: absolute;
+    top: 80px;
+    left: 300px;
+    width: 900px;
+    max-height: 550px;
+    overflow-y: scroll;
+}
+.transactionsBody::-webkit-scrollbar {
+    width: 5px;
+    border-bottom: 1px solid rgba(58, 53, 53, 0.4);
+}
+
+.transactionsBody::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.transactionsBody::-webkit-scrollbar-thumb {
+    background: #00AB9B;
+    border-radius: 6px;
+}
+
+.transactionsBody h2{
+    text-align: center;
+}
+.impsTransaction{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+.span{
+    font-weight: 600;
+}

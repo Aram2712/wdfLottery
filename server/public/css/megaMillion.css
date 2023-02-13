@@ -1,0 +1,24 @@
+.millionaire-body{
+    position: absolute;
+    left: 260px;
+    top: 120px;
+    width: 700px;
+}
+.formBody{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.steps{
+    display: flex;
+    justify-content: center;
+}
+.line{
+    width: 50px;
+    border-bottom: 1px black solid;
+    margin: 0 15px 25px 15px;
+}
+.hide{
+    display: none;
+}
+

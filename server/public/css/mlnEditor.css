@@ -1,0 +1,14 @@
+.editingBody {
+    position: absolute;
+    top: 80px;
+    left: 260px;
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.inputField{
+    display: flex;
+    flex-wrap: nowrap;
+}
